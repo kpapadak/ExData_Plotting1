@@ -8,6 +8,7 @@ names(power) <- c(
     "Global_intensity","Sub_metering_1",
     "Sub_metering_2","Sub_metering_3")
 windows()
+par(bg='white')
 hist(power$Global_active_power,
      col="red",main="Global Active Power",
      xlab="Global Active Power (kilowatts)",

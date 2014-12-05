@@ -13,6 +13,7 @@ power$datetime <- paste(as.character(power$Date),
 power$datetime <- strptime(power$datetime,
                            format = "%Y-%m-%d %H:%M:%S")
 windows()
+par(bg='white')
 plot(power$datetime,power$Global_active_power,
      type="l",ylab="Global Active Power (kilowatts)",
      xlab = "")

@@ -7,7 +7,13 @@ names(power) <- c(
     "Global_reactive_power","Voltage",
     "Global_intensity","Sub_metering_1",
     "Sub_metering_2","Sub_metering_3")
+power$Date <- as.Date(power$Date,format="%d/%m/%Y")
+power$datetime <- paste(as.character(power$Date),
+                        as.character(power$Time))
+power$datetime <- strptime(power$datetime,
+                           format = "%Y-%m-%d %H:%M:%S")
 windows()
+par(bg='white')
 plot(power$datetime,power$Sub_metering_1,type="l",
      col="black",xlab="",ylab="Energy sub metering")
 points(power$datetime,power$Sub_metering_2,type="l",
